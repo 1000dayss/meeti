@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.meeti {
+
+    &__heading {
+        text-align: center;
+    }
+    &__grid {
+        @include m.tablet { 
+            @include m.grid(3, 5rem);
+            margin-top: 5rem;
+        }
+    }
+    &__left {
+        grid-column: 1 / 3;
+    }
+    &__informacion {
+        background-color: v.$secundario;
+        padding: 4rem;
+        color: v.$blanco;
+        text-align: center;
+    }
+    &__fecha,
+    &__hora,
+    &__addres {
+        color: v.$blanco; 
+    }
+    &__fecha,
+    &__hora {
+        span {
+            font-weight: 700;
+        }
+    }
+}
